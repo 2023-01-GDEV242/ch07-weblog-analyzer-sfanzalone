@@ -1,5 +1,5 @@
 /**
- * Read web server data and analyse hourly access patterns.
+ * Read web server data and analyze hourly access patterns.
  * 
  * @author Salvatore Anzalone
  * @version    2/27/2023
@@ -50,33 +50,71 @@ public class LogAnalyzer
     
     /**
      * Print the busiest hour.
-     * This will call to analyzeHourlyData to
+     * This will call analyzeHourlyData to
      * do this.
      */
     public void busiestHour()
     {
-        System.out.println("Hr: Count");
-        for(int hour = 0; hour < hourCounts.length; hour++) {
-            System.out.println(hour + ": " + hourCounts[hour]);
+        for(int hour = 0; hour < hourCounts.length; )
+        {
+            if(hour > 3)
+            {
+                System.out.println("Hr: Count");
+            }
+        }
+    }
+    
+    /**
+     * Print the busiest day.
+     * This will call analyzeHourlyData to
+     * do this.
+     */
+    public void busiestDay()
+    {
+        for(int hour = 0; hour < hourCounts.length; )
+        {
+            if(hour > 3)
+            {
+                System.out.println("Hr: Count");
+            }
         }
     }
     
     /**
      * Print the quietest hour.
-     * This will call to analyzeHourlyData to
+     * This will call analyzeHourlyData to
      * do this.
      */
     public void quietestHour()
     {
-        System.out.println("Hr: Count");
-        for(int hour = 0; hour < hourCounts.length; hour++) {
-            System.out.println(hour + ": " + hourCounts[hour]);
+        for(int hour = 0; hour < hourCounts.length; )
+        {
+            if(hour <= 3)
+            {
+                System.out.println("Hr: Count");
+            }
+        }
+    }
+    
+    /**
+     * Print the quietest day.
+     * This will call analyzeHourlyData to
+     * do this.
+     */
+    public void quietestDay()
+    {
+        for(int hour = 0; hour < hourCounts.length; )
+        {
+            if(hour <= 3)
+            {
+                System.out.println("Hr: Count");
+            }
         }
     }
     
     /**
      * Print the busiest 2-Hour increments.
-     * This will call to analyzeHourlyData to
+     * This will call analyzeHourlyData to
      * do this.
      */
     public void busiestTwoHour()
@@ -100,6 +138,11 @@ public class LogAnalyzer
      */
     public void numberOfAccesses()
     {
+        int access = 0;
         
+        for(int hour = 0; hour < hourCounts.length; access++)
+        {
+            System.out.println("Number of Accesses: " + access);
+        }
     }
 }
