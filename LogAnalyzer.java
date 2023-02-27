@@ -8,6 +8,7 @@ public class LogAnalyzer
 {
     // Where to calculate the hourly access counts.
     private int[] hourCounts;
+    
     // Use a LogfileReader to access the data.
     private LogfileReader reader;
 
@@ -19,6 +20,7 @@ public class LogAnalyzer
         // Create the array object to hold the hourly
         // access counts.
         hourCounts = new int[24];
+        
         // Create the reader to obtain the data.
         reader = new LogfileReader("demo.log");
     }
@@ -28,7 +30,8 @@ public class LogAnalyzer
      */
     public void analyzeHourlyData()
     {
-        while(reader.hasNext()) {
+        while(reader.hasNext())
+        {
             LogEntry entry = reader.next();
             int hour = entry.getHour();
             hourCounts[hour]++;
@@ -43,7 +46,9 @@ public class LogAnalyzer
     public void printHourlyCounts()
     {
         System.out.println("Hr: Count");
-        for(int hour = 0; hour < hourCounts.length; hour++) {
+        
+        for(int hour = 0; hour < hourCounts.length; hour++)
+        {
             System.out.println(hour + ": " + hourCounts[hour]);
         }
     }
@@ -55,7 +60,7 @@ public class LogAnalyzer
      */
     public void busiestHour()
     {
-        for(int hour = 0; hour < hourCounts.length; )
+        for(int hour = 0; hour < hourCounts.length; hour++)
         {
             if(hour > 3)
             {
@@ -87,10 +92,11 @@ public class LogAnalyzer
      */
     public void busiestTwoHour()
     {
-        System.out.println("Hr: Count");
-        for(int hour = 0; hour < hourCounts.length; )
+        for(int hour = 0; hour < hourCounts.length; hour++)
         {
-            if(hour > 4)
+            System.out.println(hour * 2);
+            
+            if(hour > 6)
             {
                 System.out.println("Hr: Count");
             }
@@ -125,7 +131,7 @@ public class LogAnalyzer
      */
     public void quietestHour()
     {
-        for(int hour = 0; hour < hourCounts.length; )
+        for(int hour = 0; hour < hourCounts.length; hour++)
         {
             if(hour <= 3)
             {
@@ -180,10 +186,11 @@ public class LogAnalyzer
     }
     
     /**
-     * Print the times this class was accessed.
+     * Print the times a site was accessed.
      */
     public void numberOfAccesses()
     {
+        //The number of accesses
         int access = 0;
         
         for(int hour = 0; hour < hourCounts.length; access++)
@@ -193,7 +200,7 @@ public class LogAnalyzer
     }
     
     /**
-     * Print the times this class was accessed in a month.
+     * Print the times a site was accessed per month.
      */
     public void totalAccessesPerMonth()
     {
@@ -203,13 +210,19 @@ public class LogAnalyzer
         
         for(int hour = 0; hour < hourCounts.length; accessTotal++)
         {
-            System.out.println("Total Number of Accesses: " + accessTotal);
+            int hourTotal = hour;
+            
+            //Total accesses per month
+            int monthTotal = hourTotal * 28;
+            
+            System.out.println("Total Number of Accesses per Month: " +
+                                monthTotal);
         }
     }
     
     /**
-     * Print the average amount of times this
-     * class was accessed in a month.
+     * Print the average amount of times a
+     * site was accessed in a month.
      */
     public void averageAccessesPerMonth()
     {
