@@ -4,8 +4,8 @@ import java.util.*;
 /**
  * A class for creating log files of random data.
  * 
- * @author David J. Barnes and Michael Kölling
- * @version    2016.02.29
+ * @author Salvatore Anzalone
+ * @version    2/27/2023
  */
 public class LogfileCreator
 {
@@ -29,25 +29,35 @@ public class LogfileCreator
     {
         boolean success = false;
         
-        if(numEntries > 0) {
-            try (FileWriter writer = new FileWriter(filename)) {
+        if(numEntries > 0)
+        {
+            try (FileWriter writer = new FileWriter(filename))
+            {
                 LogEntry[] entries = new LogEntry[numEntries];
-                for(int i = 0; i < numEntries; i++) {
+                
+                for(int i = 0; i < numEntries; i++)
+                {
                     entries[i] = createEntry();
                 }
+                
                 Arrays.sort(entries);
-                for(int i = 0; i < numEntries; i++) {
+                
+                for(int i = 0; i < numEntries; i++)
+                {
                     writer.write(entries[i].toString());
                     writer.write('\n');
                 }
                 
                 success = true;
             }
-            catch(IOException e) {
-                System.err.println("There was a problem writing to " + filename);
+            
+            catch(IOException e)
+            {
+                System.err.println("There was a problem writing to " +
+                                    filename);
             }
-                
         }
+        
         return success;
     }
     
@@ -59,11 +69,17 @@ public class LogfileCreator
     {
         int year = 2016;
         int month = 1 + rand.nextInt(12);
+        
         // Avoid the complexities of days-per-month.
         int day = 1 + rand.nextInt(28);
         int hour = rand.nextInt(24);
         int minute = rand.nextInt(60);
+        
+        while(year <= 2023)
+        {
+            new LogEntry(year, month, day, hour, minute);
+        }
+        
         return new LogEntry(year, month, day, hour, minute);
     }
-
 }

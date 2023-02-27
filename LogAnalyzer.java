@@ -111,7 +111,7 @@ public class LogAnalyzer
             //in a day.
             int hourTotal = hour;
             
-            if(hourTotal / 28  > 100)
+            if(hourTotal / 28  >= 100 || hourTotal / 28 <= 100)
             {
                 System.out.println("Month: Count");
             }
@@ -151,6 +151,27 @@ public class LogAnalyzer
     }
     
     /**
+     * Print the quietest month.
+     * This will call analyzeHourlyData to
+     * do this.
+     */
+    public void quietestMonth()
+    {
+        for(int hour = 0; hour < hourCounts.length; hour++)
+        {
+            //Provides the total amount of hours accumulated,
+            //regardless if it's through the busiest or quietest hours
+            //in a day.
+            int hourTotal = hour;
+            
+            if(hourTotal / 28  >= 50 || hourTotal / 28 <= 50)
+            {
+                System.out.println("Month: Count");
+            }
+        }
+    }
+    
+    /**
      * Print the lines of data read by the LogfileReader
      */
     public void printData()
@@ -183,6 +204,26 @@ public class LogAnalyzer
         for(int hour = 0; hour < hourCounts.length; accessTotal++)
         {
             System.out.println("Total Number of Accesses: " + accessTotal);
+        }
+    }
+    
+    /**
+     * Print the average amount of times this
+     * class was accessed in a month.
+     */
+    public void averageAccessesPerMonth()
+    {
+        //Provides the total amount of times the
+        //analyzer was accessed.
+        int accessTotal = 0;
+        
+        //The average of the total
+        int accessAverage = accessTotal / 28;
+        
+        for(int hour = 0; hour < hourCounts.length; accessTotal++)
+        {
+            System.out.println("Average Number of Accesses: " +
+                                accessAverage);
         }
     }
 }
