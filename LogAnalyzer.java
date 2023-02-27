@@ -49,11 +49,42 @@ public class LogAnalyzer
     }
     
     /**
-     * Print the times this class was accessed.
+     * Print the busiest hour.
+     * This will call to analyzeHourlyData to
+     * do this.
      */
-    public void numberOfAccesses()
+    public void busiestHour()
     {
-        
+        System.out.println("Hr: Count");
+        for(int hour = 0; hour < hourCounts.length; hour++) {
+            System.out.println(hour + ": " + hourCounts[hour]);
+        }
+    }
+    
+    /**
+     * Print the quietest hour.
+     * This will call to analyzeHourlyData to
+     * do this.
+     */
+    public void quietestHour()
+    {
+        System.out.println("Hr: Count");
+        for(int hour = 0; hour < hourCounts.length; hour++) {
+            System.out.println(hour + ": " + hourCounts[hour]);
+        }
+    }
+    
+    /**
+     * Print the busiest 2-Hour increments.
+     * This will call to analyzeHourlyData to
+     * do this.
+     */
+    public void busiestTwoHour()
+    {
+        System.out.println("Hr: Count");
+        for(int hour = 0; hour < hourCounts.length; hour++) {
+            System.out.println(hour + ": " + hourCounts[hour]);
+        }
     }
     
     /**
@@ -62,5 +93,13 @@ public class LogAnalyzer
     public void printData()
     {
         reader.printData();
+    }
+    
+    /**
+     * Print the times this class was accessed.
+     */
+    public void numberOfAccesses()
+    {
+        
     }
 }
