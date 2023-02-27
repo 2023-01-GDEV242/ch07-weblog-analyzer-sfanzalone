@@ -71,11 +71,49 @@ public class LogAnalyzer
      */
     public void busiestDay()
     {
-        for(int hour = 0; hour < hourCounts.length; )
+        for(int hour = 0; hour < hourCounts.length; hour++)
         {
             if(hour > 3)
             {
+                System.out.println("Day: Count");
+            }
+        }
+    }
+    
+    /**
+     * Print the busiest 2-Hour increments.
+     * This will call analyzeHourlyData to
+     * do this.
+     */
+    public void busiestTwoHour()
+    {
+        System.out.println("Hr: Count");
+        for(int hour = 0; hour < hourCounts.length; )
+        {
+            if(hour > 4)
+            {
                 System.out.println("Hr: Count");
+            }
+        }
+    }
+    
+    /**
+     * Print the busiest month.
+     * This will call analyzeHourlyData to
+     * do this.
+     */
+    public void busiestMonth()
+    {
+        for(int hour = 0; hour < hourCounts.length; hour++)
+        {
+            //Provides the total amount of hours accumulated,
+            //regardless if it's through the busiest or quietest hours
+            //in a day.
+            int hourTotal = hour;
+            
+            if(hourTotal / 28  > 100)
+            {
+                System.out.println("Month: Count");
             }
         }
     }
@@ -103,25 +141,12 @@ public class LogAnalyzer
      */
     public void quietestDay()
     {
-        for(int hour = 0; hour < hourCounts.length; )
+        for(int hour = 0; hour < hourCounts.length; hour++)
         {
             if(hour <= 3)
             {
-                System.out.println("Hr: Count");
+                System.out.println("Day: Count");
             }
-        }
-    }
-    
-    /**
-     * Print the busiest 2-Hour increments.
-     * This will call analyzeHourlyData to
-     * do this.
-     */
-    public void busiestTwoHour()
-    {
-        System.out.println("Hr: Count");
-        for(int hour = 0; hour < hourCounts.length; hour++) {
-            System.out.println(hour + ": " + hourCounts[hour]);
         }
     }
     
@@ -143,6 +168,21 @@ public class LogAnalyzer
         for(int hour = 0; hour < hourCounts.length; access++)
         {
             System.out.println("Number of Accesses: " + access);
+        }
+    }
+    
+    /**
+     * Print the times this class was accessed in a month.
+     */
+    public void totalAccessesPerMonth()
+    {
+        //Provides the total amount of times the
+        //analyzer was accessed.
+        int accessTotal = 0;
+        
+        for(int hour = 0; hour < hourCounts.length; accessTotal++)
+        {
+            System.out.println("Total Number of Accesses: " + accessTotal);
         }
     }
 }
