@@ -2,7 +2,7 @@
  * Read web server data and analyze hourly access patterns.
  * 
  * @author Salvatore Anzalone
- * @version    2/27/2023
+ * @version    3/13/2023
  */
 public class LogAnalyzer
 {
@@ -54,7 +54,7 @@ public class LogAnalyzer
     }
     
     /**
-     * Print the busiest hour.
+     * Finds the busiest hour.
      * This will call analyzeHourlyData to
      * do this.
      */
@@ -64,13 +64,13 @@ public class LogAnalyzer
         {
             if(hour > 3)
             {
-                System.out.println("Hr: Count");
+                
             }
         }
     }
     
     /**
-     * Print the busiest day.
+     * Finds and prints the busiest day.
      * This will call analyzeHourlyData to
      * do this.
      */
@@ -86,7 +86,7 @@ public class LogAnalyzer
     }
     
     /**
-     * Print the busiest 2-Hour increments.
+     * Finds the busiest 2-Hour increments.
      * This will call analyzeHourlyData to
      * do this.
      */
@@ -98,13 +98,13 @@ public class LogAnalyzer
             
             if(hour > 6)
             {
-                System.out.println("Hr: Count");
+                
             }
         }
     }
     
     /**
-     * Print the busiest month.
+     * Finds and prints the busiest month.
      * This will call analyzeHourlyData to
      * do this.
      */
@@ -125,7 +125,7 @@ public class LogAnalyzer
     }
     
     /**
-     * Print the quietest hour.
+     * Finds the quietest hour.
      * This will call analyzeHourlyData to
      * do this.
      */
@@ -135,13 +135,13 @@ public class LogAnalyzer
         {
             if(hour <= 3)
             {
-                System.out.println("Hr: Count");
+                
             }
         }
     }
     
     /**
-     * Print the quietest day.
+     * Finds and prints the quietest day.
      * This will call analyzeHourlyData to
      * do this.
      */
@@ -157,7 +157,7 @@ public class LogAnalyzer
     }
     
     /**
-     * Print the quietest month.
+     * Finds and prints the quietest month.
      * This will call analyzeHourlyData to
      * do this.
      */
